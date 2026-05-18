@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+authors:
+  - family-names: "Kang"
+    given-names: "Jung Min"
+    orcid: "https://orcid.org/0009-0007-9599-2792"
+title: "FIRE: Fisher Information Recommendation Engine"
+version: "1.0.0"
+date-released: "2026-05-18"
+repository-code: "https://github.com/testofschool/fire-recommendation"
+license: MIT

@@ -1,0 +1,101 @@
+\begin{thebibliography}{12}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[{Business Insider}(2021)]{tiktok_algo}
+{Business Insider}.
+\newblock {TikTok Algo 101}: Leaked internal document on recommendation
+  algorithm.
+\newblock Reported by The New York Times; spokesperson confirmed authenticity,
+  2021.
+\newblock URL
+  \url{https://www.businessinsider.com/tiktok-algorithm-recommendation-get-bored-close-app-new-york-times-2021-12}.
+\newblock Used as architectural analogy only.
+
+\bibitem[Covington et~al.(2016)Covington, Adams, and
+  Sargin]{covington2016youtube}
+Paul Covington, Jay Adams, and Emre Sargin.
+\newblock Deep neural networks for {YouTube} recommendations.
+\newblock In \emph{Proceedings of the 10th ACM Conference on Recommender
+  Systems}, pages 191--198, 2016.
+\newblock \doi{10.1145/2959100.2959190}.
+
+\bibitem[{European Union}(2024)]{euaiact}
+{European Union}.
+\newblock {Regulation (EU) 2024/1689}, article 50 --- transparency obligations.
+\newblock Official Journal of the European Union, 2024.
+\newblock URL \url{https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng}.
+\newblock Applicable August 2, 2026.
+
+\bibitem[Fischer(1973)]{fischer1973}
+Gerhard~H. Fischer.
+\newblock The linear logistic test model as an instrument in educational
+  research.
+\newblock \emph{Acta Psychologica}, 37\penalty0 (6):\penalty0 359--374, 1973.
+\newblock \doi{10.1016/0001-6918(73)90003-6}.
+
+\bibitem[Harper and Konstan(2015)]{harper2015movielens}
+F.~Maxwell Harper and Joseph~A. Konstan.
+\newblock The {MovieLens} datasets: History and context.
+\newblock \emph{ACM Transactions on Interactive Intelligent Systems},
+  5\penalty0 (4):\penalty0 1--19, 2015.
+\newblock \doi{10.1145/2827872}.
+
+\bibitem[Ji et~al.(2020)Ji, Sun, Zhang, and Li]{ji2020popularity}
+Yitong Ji, Aixin Sun, Jie Zhang, and Chenliang Li.
+\newblock A re-visit of the popularity baseline in recommender systems.
+\newblock In \emph{Proceedings of the 43rd International ACM SIGIR Conference},
+  2020.
+\newblock \doi{10.1145/3397271.3401233}.
+
+\bibitem[Kaminskas and Bridge(2016)]{kaminskas2016diversity}
+Marius Kaminskas and Derek Bridge.
+\newblock Diversity, serendipity, novelty, and coverage: A survey and empirical
+  analysis of beyond-accuracy objectives in recommender systems.
+\newblock \emph{ACM Transactions on Interactive Intelligent Systems},
+  7\penalty0 (1):\penalty0 1--42, 2016.
+\newblock \doi{10.1145/2926720}.
+
+\bibitem[Kang(2026)]{kang2026pcr}
+Jung~Min Kang.
+\newblock Psychometric content routing: Frontier-value selection for
+  user-conditioned {LLM} processing.
+\newblock 2026.
+\newblock \doi{10.5281/zenodo.20242296}.
+\newblock URL \url{https://zenodo.org/records/20242296}.
+\newblock Preprint.
+
+\bibitem[Lord and Novick(1968)]{lord1968}
+Frederic~M. Lord and Melvin~R. Novick.
+\newblock \emph{Statistical Theories of Mental Test Scores}.
+\newblock Addison-Wesley, 1968.
+
+\bibitem[{Meta AI}(2023)]{meta2023ai}
+{Meta AI}.
+\newblock The {AI} behind unconnected content recommendations on {Facebook} and
+  {Instagram}.
+\newblock Meta AI Blog, 2023.
+\newblock URL
+  \url{https://ai.meta.com/blog/ai-unconnected-content-recommendations-facebook-instagram/}.
+
+\bibitem[Sharpnack et~al.(2025)Sharpnack, Hao, Mulcaire, Bicknell, LaFlair,
+  Yancey, and von Davier]{sharpnack2024banditcat}
+James Sharpnack, Kevin Hao, Phoebe Mulcaire, Klinton Bicknell, Geoff LaFlair,
+  Kevin Yancey, and Alina~A. von Davier.
+\newblock {BanditCAT} and {AutoIRT}: Machine learning approaches to
+  computerized adaptive testing and item calibration.
+\newblock In \emph{Proceedings of Large Foundation Models for Educational
+  Assessment}, pages 121--135. PMLR, 2025.
+\newblock arXiv:2410.21033.
+
+\bibitem[Veldkamp et~al.(2025)Veldkamp, Grasman, and
+  Molenaar]{veldkamp2025mirt}
+Karel Veldkamp, Raoul Grasman, and Dylan Molenaar.
+\newblock Recommendation with item response theory.
+\newblock \emph{Behaviormetrika}, 52:\penalty0 343--360, 2025.
+\newblock \doi{10.1007/s41237-024-00244-3}.
+
+\end{thebibliography}
