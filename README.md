@@ -19,8 +19,12 @@
 wget https://files.grouplens.org/datasets/movielens/ml-1m.zip
 unzip ml-1m.zip -d data/
 pip install -r requirements.txt  # Python >= 3.11
-python src/experiment_v5.py --data_dir data/ml-1m --out_dir figures --seeds 42 123 789 --n_eval_users 300
+python src/experiment_v5.py --data_dir data/ml-1m --seeds 42 123 789 --n_eval_users 300
 ```
+
+Outputs (figures, `results_v5.json`, `README_generated.md`) are written to `--out_dir`
+(default `repro_output/`); the committed `figures/`, `results_v5.json` and `README.md`
+are not modified. Pass `--write_readme` to also overwrite `README.md`.
 
 ## Author
 

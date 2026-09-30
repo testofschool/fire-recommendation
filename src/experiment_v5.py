@@ -11,8 +11,13 @@ FIRE v5 — Final production. All audit issues resolved.
   [v4.8] "optimal" → "standard local" for Fisher Info
   [v4.9] GitHub URL placeholder until repo is public
   [v4.10] Correct script name in README
+  [audit 2026-09-26] Outputs (figures, results_v5.json, README_generated.md) go to
+      --out_dir (default: repro_output/). The committed README.md is overwritten only
+      with --write_readme; the committed figures/ only if --out_dir figures is passed;
+      the committed top-level results_v5.json is no longer written.
 """
 import argparse, os, json, time, warnings
+from pathlib import Path
 import numpy as np, pandas as pd, matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
@@ -29,7 +34,11 @@ plt.rcParams.update({'font.size':9,'font.family':'serif','figure.dpi':150,
 def parse_args():
     p=argparse.ArgumentParser()
     p.add_argument('--data_dir',default='data/ml-1m')
-    p.add_argument('--out_dir',default='figures')
+    p.add_argument('--out_dir',default='repro_output',
+        help='folder for figures, results_v5.json and README_generated.md '
+             '(default: repro_output/, so committed files are not overwritten)')
+    p.add_argument('--write_readme',action='store_true',
+        help='also overwrite the repository README.md with the generated one (default: off)')
     p.add_argument('--seeds',type=int,nargs='+',default=[42,123,789])
     p.add_argument('--N0',type=int,default=20); p.add_argument('--M0',type=int,default=10)
     p.add_argument('--n_eval_users',type=int,default=0,help='0=all eligible')
@@ -280,7 +289,7 @@ def main():
         'config':{'N0':args.N0,'M0':args.M0},
         'auc':agg['auc'],'rec':agg['rec'],'low_count_auc':agg['low_auc'],'lltm':agg['lltm'],
         'per_run':[{k:v for k,v in r.items() if k not in ('fnames','eta')} for r in runs]}
-    out_path=os.path.join(os.path.dirname(args.out_dir) or '.','results_v5.json')
+    out_path=os.path.join(args.out_dir,'results_v5.json')
     with open(out_path,'w') as f:
         json.dump(output,f,indent=2,default=lambda x:float(x) if hasattr(x,'item') else str(x))
 
@@ -317,15 +326,26 @@ def main():
 wget https://files.grouplens.org/datasets/movielens/ml-1m.zip
 unzip ml-1m.zip -d data/
 pip install -r requirements.txt  # Python >= 3.11
-python src/experiment_v5.py --data_dir data/ml-1m --out_dir figures --seeds 42 123 789 --n_eval_users {args.n_eval_users}
+python src/experiment_v5.py --data_dir data/ml-1m --seeds 42 123 789 --n_eval_users {args.n_eval_users}
 ```
+
+Outputs (figures, `results_v5.json`, `README_generated.md`) are written to `--out_dir`
+(default `repro_output/`); the committed `figures/`, `results_v5.json` and `README.md`
+are not modified. Pass `--write_readme` to also overwrite `README.md`.
 
 ## Author
 
 Jung Min Kang · Independent Researcher, Seoul · ORCID: 0009-0007-9599-2792
 """
-    with open('README.md','w') as f: f.write(readme)
-    print(f'\n  README.md auto-generated from results')
+    gen_path=os.path.join(args.out_dir,'README_generated.md')
+    with open(gen_path,'w') as f: f.write(readme)
+    print(f'\n  Generated README written to {gen_path}')
+    if args.write_readme:
+        readme_path=Path(__file__).resolve().parents[1]/'README.md'
+        with open(readme_path,'w') as f: f.write(readme)
+        print(f'  --write_readme: {readme_path} overwritten')
+    else:
+        print('  README.md not modified (pass --write_readme to overwrite it)')
     print(f'\n{"="*70}');print('DONE');print(f'{"="*70}')
 
 if __name__=='__main__': main()
